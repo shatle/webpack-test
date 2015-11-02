@@ -1,5 +1,5 @@
 {
-  "name": "my-test",
+  "name": "require-ensure-for-sync",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -9,6 +9,8 @@
   "author": "shatle@qq.com",
   "license": "ISC",
   "devDependencies": {
-    "art-template": "^3.0.3"
+    "art-template": "^3.0.3",
+    "jquery": "^1.9.1",
+    "underscore": "^1.8.3"
   }
 }
