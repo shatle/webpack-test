@@ -2,7 +2,7 @@ var path = require("path");
 module.exports = {
   entry: {
     first: ['./first.js'],
-    second: ['./second.js']
+    // second: ['./second.js']
   },
   output: {
     path: path.join(__dirname,  'js'),
