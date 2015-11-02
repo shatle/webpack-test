@@ -1,0 +1,17 @@
+{
+  "name": "require-ensure-for-sync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shatle@qq.com",
+  "license": "ISC",
+  "devDependencies": {
+    "art-template": "^3.0.3",
+    "jquery": "^1.9.1",
+    "underscore": "^1.8.3",
+    "webpack": "^1.12.2"
+  }
+}
