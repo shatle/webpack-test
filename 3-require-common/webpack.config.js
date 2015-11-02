@@ -11,6 +11,13 @@ module.exports = {
     chunkFilename: "[name].chunk.js",
     publicPath: 'js/'
   },
-  plugins: [ new webpack.optimize.CommonsChunkPlugin('common.js')]
+  plugins: [ 
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: {
+        except: ['$', 'exports', 'require']
+      }
+    })
+  ]
 }
 
