@@ -102,7 +102,6 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// require("!style!css!./style.css")
 	__webpack_require__(2)
 
 	var $ = __webpack_require__(6);
@@ -137,8 +136,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./node_modules/css-loader/index.js!./style.css", function() {
-				var newContent = require("!!./node_modules/css-loader/index.js!./style.css");
+			module.hot.accept("!!./node_modules/css-loader/index.js!./node_modules/less-loader/index.js!./style.less", function() {
+				var newContent = require("!!./node_modules/css-loader/index.js!./node_modules/less-loader/index.js!./style.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -156,7 +155,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n\tbackground-color: blue;\n}", ""]);
+	exports.push([module.id, "body {\n  background-color: orange;\n}\nbody ul {\n  color: white;\n}\n", ""]);
 
 	// exports
 
