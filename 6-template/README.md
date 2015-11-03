@@ -1,14 +1,29 @@
 
-### diff from 4-css
+### 
 
-you need to install `npm install less-loader --save-dev`, and change `first.js`:
-
-```
-require('./style.less')
-```
-
-and change `webpack.config.js`:
+you need to install 
 
 ```
-{ test: /\.less$/, loader: "style!css!less" }
+npm install html-loader --save-dev
+npm install art-template --save-dev
 ```
+
+and in `webpack.config.js`:
+
+```
+{ test: /\.html$/, loader: "html" }
+```
+
+in JS code, u can render page in this way:
+
+```
+var template = require('art-template');
+var data = {
+    title: 'title',
+    list: ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7']
+};
+var noticeTpl = require('./notice.html');
+var noticeFn = template.compile(noticeTpl);
+$('#tplDiv').append(noticeFn(data));
+```
+

@@ -2,11 +2,11 @@ require('./style.less');
 
 var $ = require('jquery');
 var common = require('./common');
-var template = require('art-template');
 
+var template = require('art-template');
 var data = {
-    title: '标签',
-    list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+    title: 'title',
+    list: ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7']
 };
 var noticeTpl = require('./notice.html');
 var noticeFn = template.compile(noticeTpl);
