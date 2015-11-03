@@ -95,14 +95,14 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(15);
+	module.exports = __webpack_require__(16);
 
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {__webpack_require__(2);
+	__webpack_require__(2);
 
 	var $ = __webpack_require__(6);
 	var common = __webpack_require__(7);
@@ -112,11 +112,9 @@
 	    title: '标签',
 	    list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
 	};
-	template.config('base', '/template');
-	console.info('-----------', __dirname)
-	template.config('extname', '.html');
-	var html = template('notice', data)
-	$('#tplDiv').empty().append(html);
+	var noticeTpl = __webpack_require__(14);
+	var noticeFn = template.compile(noticeTpl);
+	$('#tplDiv').append(noticeFn(data));
 
 
 	$('body').find('a#second').text('Second, which can be clicked.')
@@ -124,15 +122,14 @@
 	    console.log('second clicked with commond: '+ common );
 	    
 	    __webpack_require__.e/* nsure */(1, function(require){
-	      var _ = __webpack_require__(14);
-	      var _sec = __webpack_require__(15);
+	      var _ = __webpack_require__(15);
+	      var _sec = __webpack_require__(16);
 	      console.log(' underscore ....'+ _.first([2,3,4])+' ...second..' +_sec);
 	    });
 	  });
 
 	module.exports = " In first";
 
-	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ },
 /* 2 */
@@ -12033,8 +12030,14 @@
 	})();
 
 /***/ },
-/* 14 */,
-/* 15 */
+/* 14 */
+/***/ function(module, exports) {
+
+	module.exports = "<h1>{{title}}</h1>\n<ul>\n    {{each list as value i}}\n        <li>index: {{i + 1}} : {{value}}</li>\n    {{/each}}\n</ul>";
+
+/***/ },
+/* 15 */,
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(6);
