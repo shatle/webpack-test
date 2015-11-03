@@ -1,0 +1,23 @@
+{
+  "name": "image",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shatle@qq.com",
+  "license": "ISC",
+  "devDependencies": {
+    "art-template": "^3.0.3",
+    "css-loader": "^0.21.0",
+    "file-loader": "^0.8.4",
+    "html-loader": "^0.3.0",
+    "jquery": "^1.9.1",
+    "less-loader": "^2.2.1",
+    "style-loader": "^0.13.0",
+    "underscore": "^1.8.3",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2"
+  }
+}
