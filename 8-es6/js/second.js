@@ -118,24 +118,27 @@
 	// var noticeFn = template.compile(noticeTpl);
 	// $('#tplDiv').append(noticeFn(data));
 
+	// template strings
 	var name = "Bob",
 	    time = "today";
 	var es6_tpl_str = 'Hello ' + name + ', how are you ' + time + '?';
+	// destructing
 	var _ref = [1, 2, 3];
 	var a = _ref[0];
 	var b = _ref[2];
+	// default params
 
 	function f(x) {
 	  var y = arguments.length <= 1 || arguments[1] === undefined ? 12 : arguments[1];
 
 	  return x + y;
 	}
-
-	console.info('=======es6=11===', es6_tpl_str, a, b, f(3));
-
+	console.info('=======es6====', es6_tpl_str, a, b, f(3));
+	var secondClickCount = 0;
 	$('body').find('a#second').text('Second, which can be clicked.').click(function () {
 	  console.log('second clicked with commond: ' + common);
-
+	  secondClickCount += 1;
+	  $('a#second').next('span').text(secondClickCount);
 	  __webpack_require__.e/* nsure */(1, function (require) {
 	    var _ = __webpack_require__(8);
 	    var _sec = __webpack_require__(9);
@@ -180,7 +183,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: orange;\n}\nbody ul {\n  color: white;\n}\n", ""]);
+	exports.push([module.id, "body {\n  background-color: orange;\n}\nbody a {\n  cursor: pointer;\n}\nbody ul {\n  color: white;\n}\nbody ul li span {\n  color: blue;\n}\n", ""]);
 
 	// exports
 
@@ -10869,9 +10872,11 @@
 
 	var $ = __webpack_require__(6);
 	var common = __webpack_require__(7);
+	var firstClickCount = 0;
 	$('body').find('a#first').text('First, which can be clicked.').click(function () {
 	  console.log('first clicked with commond: ' + common);
-
+	  firstClickCount += 1;
+	  $('a#first').next('span').text(firstClickCount);
 	  // require.ensure(['./first'], function(){
 	  var first = __webpack_require__(1);
 	  console.log('exports from first: ' + first);

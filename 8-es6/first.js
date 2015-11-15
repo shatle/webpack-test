@@ -23,11 +23,12 @@ function f(x, y=12) {
   return x + y;
 }
 console.info('=======es6====', es6_tpl_str, a, b, f(3) );
-
+var secondClickCount = 0;
 $('body').find('a#second').text('Second, which can be clicked.')
   .click(function(){
     console.log('second clicked with commond: '+ common );
-    
+    secondClickCount += 1;
+    $('a#second').next('span').text(secondClickCount);
     require.ensure(['underscore', './second'], function(require){
       var _ = require('underscore');
       var _sec = require('./second');

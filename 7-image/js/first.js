@@ -116,11 +116,12 @@
 	var noticeFn = template.compile(noticeTpl);
 	$('#tplDiv').append(noticeFn(data));
 
-
+	var secondClickCount = 0;
 	$('body').find('a#second').text('Second, which can be clicked.')
 	  .click(function(){
 	    console.log('second clicked with commond: '+ common );
-	    
+	    secondClickCount += 1;
+	    $('a#second').next('span').text(secondClickCount);
 	    __webpack_require__.e/* nsure */(1, function(require){
 	      var _ = __webpack_require__(16);
 	      var _sec = __webpack_require__(17);
@@ -166,7 +167,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: orange;\n}\nbody ul {\n  color: white;\n}\n", ""]);
+	exports.push([module.id, "body {\n  background-color: orange;\n}\nbody a {\n  cursor: pointer;\n}\nbody ul {\n  color: white;\n}\nbody ul li span {\n  color: blue;\n}\n", ""]);
 
 	// exports
 

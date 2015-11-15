@@ -107,10 +107,12 @@
 
 	var $ = __webpack_require__(6);
 	var common = __webpack_require__(7);
+	var secondClickCount = 0;
 	$('body').find('a#second').text('Second, which can be clicked.')
 	  .click(function(){
 	    console.log('second clicked with commond: '+ common );
-	    
+	    secondClickCount += 1;
+	    $('a#second').next('span').text(secondClickCount);
 	    __webpack_require__.e/* nsure */(1, function(require){
 	      var _ = __webpack_require__(8);
 	      var _sec = __webpack_require__(9);
@@ -156,7 +158,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n\tbackground-color: blue;\n}", ""]);
+	exports.push([module.id, "body {\n\tbackground-color: orange;\n}\na { cursor: pointer; }\nul li span {\n\tcolor: blue;\n}", ""]);
 
 	// exports
 
@@ -10841,10 +10843,12 @@
 
 	var $ = __webpack_require__(6);
 	var common = __webpack_require__(7);
+	var firstClickCount = 0;
 	$('body').find('a#first').text('First, which can be clicked.')
 	  .click( function(){
 	    console.log('first clicked with commond: '+ common );
-
+	    firstClickCount += 1;
+	    $('a#first').next('span').text(firstClickCount);
 	    // require.ensure(['./first'], function(){
 	      var first = __webpack_require__(1);
 	      console.log('exports from first: '+ first);

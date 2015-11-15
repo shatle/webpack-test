@@ -104,10 +104,12 @@
 
 	var $ = __webpack_require__(2);
 
+	var secondClickCount = 0;
 	$('body').find('a#second').text('Second, which can be clicked.')
 	  .click(function(){
 	    console.log('second clicked');
-
+	    secondClickCount += 1;
+	    $('a#second').next('span').text(secondClickCount);
 	    // require.ensure(['./second'], function(require){
 	    //   var second = require('./second');  
 	    //   console.log('export from second: '+ second);

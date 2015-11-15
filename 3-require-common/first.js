@@ -1,15 +1,12 @@
 var $ = require('jquery');
 var common = require('./common');
+var secondClickCount = 0;
 $('body').find('a#second').text('Second, which can be clicked.')
   .click(function(){
-
+    secondClickCount += 1;
+    $('a#second').next('span').text(secondClickCount);
     console.log('second clicked with commond: '+ common );
 
-    // require.ensure(['./second'], function(require){
-    //   var second = require('./second');  
-    //   console.log('export from second: '+ second);
-    // });  
-    
     require.ensure(['underscore', './second'], function(require){
       var _ = require('underscore');
       var _sec = require('./second');
