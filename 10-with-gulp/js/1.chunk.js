@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 4:
+/***/ 8:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.8.3
@@ -1555,26 +1555,25 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 5:
+/***/ 9:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(2);
-	var common = __webpack_require__(3);
-	var firstClickCount = 0;
-	$('body').find('a#first').text('First, which can be clicked.')
-	  .click( function(){
-	    console.log('first clicked with commond: '+ common );
-	    firstClickCount += 1;
-	    $('a#first').next('span').text(firstClickCount);
-	    // require.ensure(['./first'], function(){
-	      var first = __webpack_require__(1);
-	      console.log('exports from first: '+ first);
-	    // });
+	'use strict';
 
-	  });
+	var $ = __webpack_require__(6);
+	var common = __webpack_require__(7);
+	var firstClickCount = 0;
+	$('body').find('a#first').text('First, which can be clicked.').click(function () {
+	  console.log('first clicked with commond: ' + common);
+	  firstClickCount += 1;
+	  $('a#first').next('span').text(firstClickCount);
+	  // require.ensure(['./first'], function(){
+	  var first = __webpack_require__(1);
+	  console.log('exports from first: ' + first);
+	  // });
+	});
 
 	module.exports = "In second";
-
 
 /***/ }
 
