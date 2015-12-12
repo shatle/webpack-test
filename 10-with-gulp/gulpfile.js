@@ -2,6 +2,7 @@ var gulp = require("gulp");
 var gutil = require("gulp-util");
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
+var spritesmith = require('gulp.spritesmith');
 
 var path = require("path");
 var node_modules_dir = path.resolve(__dirname, 'node_modules');
@@ -59,4 +60,12 @@ gulp.task("wds", function(callback) {
         // keep the server alive or continue?
         // callback();
     });
+});
+
+gulp.task('sprite', function () {
+  var spriteData = gulp.src('images/*.png').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: 'sprite.css'
+  }));
+  return spriteData.pipe(gulp.dest('img'));
 });
